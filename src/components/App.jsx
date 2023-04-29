@@ -1,6 +1,14 @@
-export const App = () => {
+import {Component} from 'react';
+
+export default class App extends Component {
+
+  state = {
+    contacts: [],
+    name: ''
+  }
+
   return (
-    <div
+   /*  <div
       style={{
         height: '100vh',
         display: 'flex',
@@ -11,6 +19,6 @@ export const App = () => {
       }}
     >
       React homework template
-    </div>
+    </div> */
   );
 };
