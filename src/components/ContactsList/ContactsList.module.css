@@ -1,0 +1,21 @@
+.list {
+   border: solid 2px tomato;
+}
+.item {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border: solid 2px rgb(22, 20, 20);
+}
+
+.item:not(:last-child) {
+    margin-bottom: 12px;
+  }
+
+button {
+    padding: 5px 10px;
+    background-color: darkolivegreen;
+    border-radius: 12px;
+}
