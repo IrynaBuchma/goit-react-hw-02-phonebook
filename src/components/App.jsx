@@ -1,5 +1,6 @@
 import {Component} from 'react';
 import Contactslist from './ContactsList/ContactsList';
+import ContactForm from './ContactForm/ContactForm';
 
 
 export class App extends Component {
@@ -28,15 +29,22 @@ export class App extends Component {
     return (
       <div
         style={{
+          marginTop: 40,
           height: '100vh',
           display: 'flex',
-          justifyContent: 'center',
           alignItems: 'center',
-          fontSize: 20,
-          color: '#010101'
+          fontSize: 40,
+          color: '#010101',
+          flexDirection: 'column',
+          borderColor: '#000000'
         }}
       >
-        <Contactslist name={name} contacts={contacts} onDelete={this.onDelete}></Contactslist>
+          <div>Phonebook
+            <ContactForm name={name}/>
+          </div>
+          <div>Contacts
+            <Contactslist contacts={contacts} onDelete={this.onDelete}></Contactslist>
+          </div>
       </div>
     );
   }
