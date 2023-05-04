@@ -1,7 +1,7 @@
 import {Component} from 'react';
 import Contactslist from './ContactsList/ContactsList';
 import ContactForm from './ContactForm/ContactForm';
-
+import {nanoid} from 'nanoid';
 
 export class App extends Component {
 
@@ -15,16 +15,32 @@ export class App extends Component {
     name: ''
   }
 
-  onDelete = (id) => {
+  onContactFormSubmit = ({ name, number }) => {
+
+    const { contacts } = this.state;
+
+    const checkedNameIsInList = contacts.find(contact => contact.name.toLowerCase() === name.toLowerCase());
+
+    if (checkedNameIsInList) {
+      alert(`localhost:3000 says ${name} is already in contacts`);
+      return;   
+    }
+      const newContact = { id: nanoid(), name, number };
+          this.setState(({ contacts }) => ({
+            contacts: [newContact, ...contacts],
+          }) 
+          );
+  }
+
+  onContactDelete = (id) => {
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(contact => contact.id !== id )
     }))
-
   }
 
   render() {
 
-    const { contacts, name} = this.state;
+    const { contacts } = this.state;
 
     return (
       <div
@@ -40,10 +56,10 @@ export class App extends Component {
         }}
       >
           <div>Phonebook
-            <ContactForm name={name}/>
+            <ContactForm name={contacts.name} onSubmit={this.onContactFormSubmit}/>
           </div>
           <div>Contacts
-            <Contactslist contacts={contacts} onDelete={this.onDelete}></Contactslist>
+            <Contactslist contacts={contacts} onDelete={this.onContactDelete}></Contactslist>
           </div>
       </div>
     );

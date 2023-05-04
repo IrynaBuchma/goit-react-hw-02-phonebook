@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import css from './ContactsList.module.css';
 
-const ContactsItem = ({id, name, number, onDelete}) => 
+const ContactsItem = ({ id, name, number, onDelete }) => 
     <li key={id} className={css.item}>
         <p className={css.name}>{name}</p>
         <p className={css.number}>{number}</p>
