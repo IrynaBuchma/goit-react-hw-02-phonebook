@@ -14,8 +14,27 @@ code {
     monospace;
 }
 
-ul {
-  list-style: none;
+h1,h2,h3,h4,h5,h6,p,li,ul {
   margin: 0;
   padding: 0;
+}
+
+ul {
+  list-style: none;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+.section {
+  margin-bottom: 20px;
+  border: solid 5px rgb(81, 149, 81);
+  gap: 20px;
+  border-radius: 25px;
 }

@@ -1,14 +1,14 @@
-.list {
-   border: solid 2px tomato;
-}
 .item {
-    padding: 5px 20px;
+    padding: 5px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
     font-size: 25px;
-    border: solid 2px rgb(22, 20, 20);
+    height: 35px;
+    border: solid, 2px, lightslategray;
+    border-radius: 8px;
+    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.15), inset  3px 3px rgba( 0.5, 0, 0, 0.1);
 }
 
 .item:not(:last-child) {
