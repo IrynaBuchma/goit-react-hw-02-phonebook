@@ -26,15 +26,17 @@ ul {
 }
 
 h1 {
+  color: darkolivegreen;
   text-align: center;
 }
 
 h2 {
+  color: darkolivegreen;
   text-align: center;
 }
 .section {
   margin-bottom: 20px;
-  border: solid 5px rgb(81, 149, 81);
+  border: solid 5px darkolivegreen;
   gap: 20px;
   border-radius: 25px;
 }
